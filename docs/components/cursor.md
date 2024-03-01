@@ -13,6 +13,8 @@ examples:
 [laser-controls]: ./laser-controls.md
 [raycaster]: ./raycaster.md
 
+The cursor is this file.
+
 The cursor component provides hover and click states for interaction on top of
 the [raycaster component][raycaster]. The cursor component can be used for
 both gaze-based and controller-based interactions, but the appearance needs
