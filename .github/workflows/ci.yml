@@ -68,10 +68,10 @@ jobs:
           directory: ./tests/coverage
 
       - name: refresh those documents
-          if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
-          run: |
-            PR_NUMBER="${{ github.event.pull_request.number }}"
-            curl https://afbot.b-bowler13.workers.dev/refreshDocs?pr_number=${PR_NUMBER}
+        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          curl https://afbot.b-bowler13.workers.dev/refreshDocs?pr_number=${PR_NUMBER}
 
   if_merged:
     if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
