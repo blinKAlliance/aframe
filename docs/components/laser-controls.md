@@ -9,6 +9,8 @@ source_code: src/components/laser-controls.js
 examples: []
 ---
 
+Causes lasers to go off.
+
 [dof]: http://www.roadtovr.com/introduction-positional-tracking-degrees-freedom-dof/
 
 The laser-controls component provides tracked controls with a laser or ray
