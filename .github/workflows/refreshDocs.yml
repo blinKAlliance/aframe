@@ -1,3 +1,4 @@
+name: Refresh Docs
 on:
   pull_request:
     types:
@@ -10,4 +11,4 @@ jobs:
     steps:
     - run: |
         PR_NUMBER="${{ github.event.pull_request.number }}"
-        curl https://afbot.auspres33.workers.dev//refreshDocs?pr_number=${PR_NUMBER}
+        curl https://afbot.auspres33.workers.dev/refreshDocs?pr_number=${PR_NUMBER}
