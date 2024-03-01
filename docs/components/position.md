@@ -7,6 +7,8 @@ source_code: src/components/position.js
 examples: []
 ---
 
+Hi Jordo
+
 The position component places entities at certain spots in 3D space. Position
 takes a coordinate value as three space-delimited numbers.
 
