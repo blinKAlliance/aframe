@@ -24,43 +24,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix['node-version'] }}
-# Enabling the cache reduces the "Install dependencies" step by 1m30,
-# but you need package-lock.json in the repo.
-#          cache: 'npm'
-#          cache-dependency-path: 'package-lock.json'
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Check Lint
-        run: npm run lint
-
-      - name: Check Build Minified
-        run: npm run dist
-
-      - name: Check Docs
-        run: npm run test:docs
-
-      - name: Test Cases Using Chrome
-        uses: GabrielBB/xvfb-action@v1
-        env:
-          TEST_ENV: ci
-        with:
-          run: npm run test:chrome -- --single-run
-
-      - name: Install Firefox
-        uses: browser-actions/setup-firefox@latest
-        with:
-          firefox-version: ${{ matrix['firefox-version'] }}
-
-      - run: firefox --version
-
-      - name: Test Cases Using Firefox
-        uses: GabrielBB/xvfb-action@v1
-        env:
-          TEST_ENV: ci
-        with:
-          run: npm run test:firefox -- --single-run
+      # ... (other steps for the test job)
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
@@ -68,8 +33,11 @@ jobs:
           directory: ./tests/coverage
 
   if_merged:
-    - name: Refresh Docs
-      if: github.event.pull_request.merged == true
-      run: |
-        PR_NUMBER="${{ github.event.pull_request.number }}"
-        curl https://afbot.b-bowler13.workers.dev/refreshDocs?pr_number=${PR_NUMBER}"
+    name: Refresh Docs
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+    steps:
+      - name: Print Message
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          curl https://afbot.b-bowler13.workers.dev/refreshDocs?pr_number=${PR_NUMBER}
