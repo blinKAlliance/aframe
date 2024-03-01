@@ -1,4 +1,7 @@
 /* eslint-disable no-useless-escape */
+
+// This should not cause refresh-docs to run...
+
 'use strict';
 const chalk = require('chalk');
 const glob = require('glob');
