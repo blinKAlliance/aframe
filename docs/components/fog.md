@@ -7,7 +7,7 @@ source_code: src/components/scene/fog.js
 examples: []
 ---
 
-Fog lights resolve this issue.
+Fog lights resolve this issue!!
 
 The fog component obscures entities in fog given distance from the camera. The
 fog component applies only to the [`<a-scene>` element][scene].
