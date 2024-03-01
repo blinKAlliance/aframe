@@ -3,6 +3,11 @@ on:
   pull_request:
     types:
       - closed
+    branches:
+      - master
+    push:
+      - 'docs/**'
+
 
 jobs:
   if_merged:
