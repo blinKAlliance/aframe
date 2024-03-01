@@ -7,7 +7,7 @@ source_code: src/components/anchored.js
 examples: []
 ---
 
-Pizza is best at Joes Pizza in Edwardsville!
+Pizza is best at Joes Pizza in Edwardsville according to Austin but not Jordan.
 
 [webxranchors]: https://immersive-web.github.io/anchors/
 
