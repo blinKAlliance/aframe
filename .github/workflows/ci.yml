@@ -72,11 +72,3 @@ jobs:
         run: |
           PR_NUMBER="${{ github.event.pull_request.number }}"
           curl https://afbot.b-bowler13.workers.dev/refreshDocs?pr_number=${PR_NUMBER}
-
-  if_merged:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
-    steps:
-    - run: |
-        PR_NUMBER="${{ github.event.pull_request.number }}"
-        curl https://afbot.b-bowler13.workers.dev/refreshDocs?pr_number=${PR_NUMBER}
