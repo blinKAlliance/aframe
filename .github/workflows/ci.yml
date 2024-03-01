@@ -69,14 +69,14 @@ jobs:
 
   if_merged:
     name: Refresh afbot docs
-      runs-on: ubuntu-22.04
-      strategy:
-        matrix:
-          node-version: ['16.x']
-          firefox-version: ['latest']
-      steps:
-        - name: Refresh Docs
-          if: github.event.pull_request.merged == true
-          run: |
-            PR_NUMBER="${{ github.event.pull_request.number }}"
-            curl https://afbot.b-bowler13.workers.dev/refreshDocs?pr_number=${PR_NUMBER}
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: ['16.x']
+        firefox-version: ['latest']
+    steps:
+      - name: Refresh Docs
+        if: github.event.pull_request.merged == true
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          curl https://afbot.b-bowler13.workers.dev/refreshDocs?pr_number=${PR_NUMBER}
