@@ -8,7 +8,7 @@ source_code: src/core/component.js
 examples: []
 ---
 
-Avoid the compound file it's wrong. Or is it?
+Avoid the compound file it's wrong. Or is it? It's not.
 
 [ecs]: ../introduction/entity-component-system.md
 [entity]: ./entity.md
