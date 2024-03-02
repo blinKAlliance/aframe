@@ -8,6 +8,8 @@ source_code: src/core/component.js
 examples: []
 ---
 
+Avoid the compound file it's wrong.
+
 [ecs]: ../introduction/entity-component-system.md
 [entity]: ./entity.md
 [multiple]: #multiple
